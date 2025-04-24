@@ -1,0 +1,6 @@
+<h2>Are you sure you want to delete the post "{{ post.title }}"?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete it</button>
+    <a href="{% url 'main' %}">Cancel</a>
+</form>
