@@ -1,0 +1,18 @@
+
+<nav>
+  <!-- Checkbox for toggling menu -->
+  <input type="checkbox" id="check">
+  <!-- Menu icon -->
+  <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <!-- Site logo -->
+ <a href="/"><label class="logo" >Blog</label></a> 
+  <!-- Navigation links -->
+  <ul>
+    <li><a href="{% url 'main' %}">HOME</a></li>
+    <li><a href="{% url 'about_me' %}">About Me</a></li>
+    <li><a href="{% url 'about_blog' %}">About The Blog</a></li>
+    <li><a href="{% url 'contact' %}">Contact Me</a></li>
+      </ul>
+</nav>

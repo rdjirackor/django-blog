@@ -1,19 +1,48 @@
 {%extends 'master.html'%}
 {%block title%}Blog{%endblock%}
 {%block content%}
-<h1>My Blog</h1>
+
+<div style="text-align: right; margin-bottom: 20px;">
+    {% if user.is_authenticated %}
+        Logged in as {{ user.username }} |
+        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" style="background: none; border: none; color: #0f0; cursor: pointer; padding: 0; font: inherit;">
+                Logout
+            </button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+</div>
+
+
+
 {%for post in posts%}
 
+<div class ="posts">
+    <div class="post-title">
 <h2>{{post.title}}</h2>
-<p>{{post.text|truncatewords:30}}</p>
-<a href="{% url 'update_post' post.pk %}">Edit</a>
-<a href="{% url 'delete_post' post.pk %}">Delete</a>
+     </div>
 
+      <div class="post-body">
+         <p>{{post.text|truncatewords:30}}</p>
+        <div class="post-actions">
+            {% if user.is_authenticated %}
 
+          <a href="{% url 'update_post' post.pk %}">Edit</a>
+           <a href="{% url 'delete_post' post.pk %}">Delete</a>
+           {%endif%}
+         </div>
+       </div>
 <hr>
 {%endfor%}
+</div>
+
+{% if user.is_authenticated %}
 <a href = "{%url 'create_post'%}">
 <button>New Post</button>
 </a>
+{%endif%}
 
 {%endblock%}

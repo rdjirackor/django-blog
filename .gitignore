@@ -13,10 +13,7 @@ venv/
 .venv/
 
 # Django specific
-*.sqlite3
-db.sqlite3
 *.pyc
-/staticfiles/
 /media/
 /migrations/**/__pycache__/
 /migrations/**/*.pyc

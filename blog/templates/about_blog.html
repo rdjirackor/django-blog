@@ -1,0 +1,108 @@
+{%extends 'master.html'%}
+{%block title%}
+About Blog
+{%endblock%}
+
+{% block content %}
+<div class="about-wrapper">
+    <div class="glow-bg"></div>
+    <div class="about-card">
+        <h1 class="about-title">About the Blog</h1>
+        <p class="about-body">
+            Hi, you found it — welcome.<br><br>
+
+            I began this blog because thoughts do not remain quietly in my mind and posting here allows me to catch them, wrestle them onto paper, and sometimes — occasionally — shape them into something worth reading.<br><br>
+
+            Here are ideas that likely shouldn't work, but might. Here are the deep dives, the rants, the overthinking, and the random flashes of brilliance that occur at 2 AM when regular humans are dreaming.<br><br>
+
+            This is a blog for the curious, a blog for the ones who think in "what ifs" and "why nots" instead of "maybes." It's uncurated, just me expressing anything I can think of and it's definitely not polished. It's not sanitized. It's alive. It's the inside of my brain with no filter.<br><br>
+
+            So if you ever imagined that your brain is like a browser with 84 open tabs — and 7 of them are blasting music — then you'll probably feel right at home here.<br><br>
+
+            Thanks for dropping by, I hope you stay and stay curious.
+        </p>
+    </div>
+</div>
+{% endblock %}
+<style>
+    .about-wrapper {
+    position: relative;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f1f1f, #121212);
+    overflow: hidden;
+    color: #fff;
+}
+
+.glow-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #0f0 0%, transparent 80%);
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(100px);
+    opacity: 0.15;
+    animation: pulseGlow 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.15; }
+    50% { transform: translateX(-50%) scale(1.2); opacity: 0.25; }
+}
+
+.about-card {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    background: rgba(34, 34, 34, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 255, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 2px solid #0f0;
+}
+
+.about-title {
+    font-size: 2.8em;
+    color: #0f0;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+    font-weight: 700;
+}
+
+.about-body {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #ddd;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.about-body::first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0f0;
+}
+
+@media (max-width: 768px) {
+    .about-card {
+        padding: 40px 20px;
+    }
+
+    .about-title {
+        font-size: 2em;
+    }
+
+    .about-body {
+        font-size: 1em;
+    }
+}
+
+</style>

@@ -1,0 +1,39 @@
+{% if message_sent %}
+  <div id="popup" class="popup">
+    Message sent successfully!
+  </div>
+{% endif %}
+<style>
+.popup {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  text-align: center; 
+  height: 100px;
+  width: 100px;
+  z-index: 9999;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+  position: fixed; /* important */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* center it */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+</style>
+
+<script>
+    setTimeout(function() {
+      var popup = document.getElementById('popup');
+      if (popup) {
+        popup.style.display = 'none';
+        window.location.href = '/contact'; // redirect after hiding
+      }
+    }, 1500); 
+  </script>
+  
